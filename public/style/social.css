@@ -1,0 +1,205 @@
+.socialDiv{
+  display: flex;
+  flex-wrap: wrap;
+  bottom: 1vh;
+  right: 1vh;
+  position: absolute;
+}
+
+.IconDiv{
+  margin: 5px;
+}
+
+.youtube {
+    height: 30px;
+    width: 30px;
+    background: url(../common/svg_yt.svg);
+    background-size: 30px 30px;
+  }
+  
+.facebook {
+    height: 30px;
+    width: 30px;
+    background: url(../common/svg_fb.svg);
+    background-size: 30px 30px;
+  }
+  
+.twitter {
+    height: 30px;
+    width: 30px;
+    background: url(../common/svg_twitter.svg);
+    background-size: 30px 30px;
+  }
+  
+.gmail {
+    height: 30px;
+    width: 30px;
+    background: url(../common/svg_gmail.svg);
+    background-size: 30px 30px;
+  }
+  
+.gplus {
+    height: 30px;
+    width: 30px;
+    background: url(../common/svg_gplus.svg);
+    background-size: 30px 30px;
+  }
+  
+.linkedin {
+    height: 30px;
+    width: 30px;
+    background: url(../common/svg_linkedin.svg);
+    background-size: 30px 30px;
+  }
+
+  #container {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    /* border: solid red 1px; */
+  }
+  
+  #halfclip {
+    width: 50%;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    overflow: hidden;
+    transform-origin: left center;
+  }
+  
+  #container:hover #halfclip {
+    animation: cliprotate 0.25s 1;
+    transform: rotate(180deg);
+  }
+  
+  @keyframes cliprotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    50.01% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+  
+  .halfcircle {
+    box-sizing: border-box;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    border: solid 2px transparent;
+    border-top-color: #EEEEEE;
+    border-left-color: #EEEEEE;
+    border-radius: 50%;
+  }
+  
+  #clipped {
+    width: 200%;
+    transform: rotate(-45deg);
+  }
+  
+  #container:hover #clipped {
+    transform: rotate(135deg);
+    animation: rotate 0.125s linear 2;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(-45deg);
+    }
+    100% {
+      transform: rotate(135deg);
+    }
+  }
+  
+  #fixed {
+    width: 100%;
+    transform: rotate(135deg);
+    opacity: 0;
+  }
+  
+  #container:hover #fixed {
+    opacity: 1;
+    animation: showfixed 0.25s 1;
+  }
+  
+  @keyframes showfixed {
+    0% {
+      opacity: 0;
+    }
+    49.99% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    left: 36%;
+  }
+  
+  .switch input {
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked+.slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

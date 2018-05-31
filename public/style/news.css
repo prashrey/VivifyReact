@@ -1,0 +1,197 @@
+.NoNews{
+    width: 100%;
+    padding: 5vh 0;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+}
+
+.NoNews div{
+    color: #c22e2c;
+    background-color: #fff;
+    border-color: #ebccd1;
+    padding: 2vh 2vw;
+    border-radius: 3px;
+}
+
+.News{
+    overflow: hidden;
+    position: absolute;
+    background: #fff;
+    top: 0;
+    z-index: 100;
+    padding-top: 6vh;
+    max-height: 94vh;
+}
+
+.News .cardHolder{
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;  
+    padding-bottom: 10px;
+}
+
+.cardHolder::-webkit-scrollbar{
+    width: 0px;
+}
+
+.close{
+    width: 100vw;
+    height: auto;
+    padding-top: 5px;
+    color: #fff;
+    background: #7873f5;
+    cursor: pointer;
+    box-shadow: 1px 2px 3px #999;
+    position: fixed;
+    top: 0;
+}
+
+.close span{
+    position: relative;
+    top:-6px;
+    left: 7px;
+}
+
+.close i{
+    border-right: 1px solid #fff;
+}
+
+.cardParent{
+    width: 18vw;
+    height: 415px;
+    margin-top: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+    text-align: left;
+    border-radius: 4px;
+    box-shadow: 1px 1px 10px #333;
+}
+
+.card0{
+    width: 18vw;
+    height: 200px;
+    filter: grayscale(0.35);
+    position: absolute;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.cardBody{
+    position: absolute;
+    top: 200px;
+    margin: 0;
+    width: 100%;
+}
+
+.title0{
+    width: auto;
+    font-size: 14px;
+    background: #263238;
+    font-weight: bold;
+    padding: 2vh 1vw;
+    border-left: 5px solid #2d7cbb;
+    border-right: 5px solid #2d7cbb;
+}
+
+.cardBody hr{
+    margin: 0;
+}
+
+.desc{
+    margin-top: 1vh;
+    padding: 0vh 1vw;
+    font-size: 13px;
+}
+
+.title0 a{
+    text-decoration: none;
+    color: #fff;
+}
+.title0 a:hover{
+    color: #20a7f5;
+}
+
+@media screen and (min-width:1260px) and (max-width:1366px){
+    .cardParent{
+        height: 375px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .card0{
+        width: 46vw;
+    }
+    .title0{
+        font-size: 15px;
+    }
+    .cardParent{
+        width: 46vw;
+        height: 350px;
+    }
+    .cardBody{
+        top: 200px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .card0{
+        width: 100vw;
+    }
+    .title0{
+        font-size: 18px;
+        padding-top: 12px;
+    }
+    .cardParent{
+        width: 100vw;
+        height: 325px;
+    }
+    .cardBody{
+        top: 200px;
+    }
+}
+
+.collapsed{
+    display: none;
+}
+
+.hideNews2{
+    display: none;
+    transform: translatex(-101%);
+}
+
+.showNews{
+    display: flex;
+    animation: shiftShowNews 0.25s ease forwards;
+}
+
+.hideNews{
+    animation: shiftHideNews 0.25s ease forwards;    
+}
+
+@keyframes shiftHideNews{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-101%);      
+    }
+}
+
+@keyframes shiftShowNews{
+    0%{
+        transform: translateX(-100%); 
+    }
+    100%{
+        transform: translateX(0%);         
+    }
+}
