@@ -24,7 +24,7 @@
   }
   
   .content{
-    width: 440px;
+    width: 372px;
     box-shadow: 4px 4px 10px #000;
   }
   
@@ -37,7 +37,7 @@
   }
   
   .leftPanel > div{
-    padding: 10px 15px 5px;
+    padding: 10px 20px 5px;
     background: #4299fa;
     font-size: 12px;
     color: #fff;
@@ -64,7 +64,7 @@
   .rightPanel{
     background: #fff;
     height: max-content;
-    width: 440px;
+    width: 372px;
   }
   
   .noShow{
@@ -85,7 +85,7 @@
 
 .details{
     height: max-content;
-    padding: 1vw 2vw 2vw;
+    padding: 1vw 1.5vw 2vw;
 }
 
 .descContent{
@@ -109,6 +109,30 @@
 
 .field .txt{
     margin-top: 6px;
+}
+
+.field input[type="text"]{
+  padding: 5px 10px;
+  border: 0px;
+  /* text-align: center; */
+  width: 111px;
+}
+
+.go{
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.btnWcity{
+  padding: 6px 5px 4px;
+  border: 0px;
+  cursor: pointer;
+}
+
+.btnWcity img{
+  height: 18px;
 }
 
 /* The checkbox */

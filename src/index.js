@@ -14,8 +14,12 @@ class Rvivify extends React.Component{
         super(props);                           // Mandatory!!! similar to super constructor call in java
         this.state = {
             imageUrl: "",
-            property: ""
+            property: "",
+            weatherLocation: "Ghaziabad"
         };
+    }
+    weatherChanged(cityName){
+        this.setState({weatherLocation: cityName});        
     }
     componentWillMount(){        
         let strUri;
@@ -35,12 +39,12 @@ class Rvivify extends React.Component{
     render(){
         return (
             <div>
-            <Settings/>
+            <Settings weatherChanged={this.weatherChanged.bind(this)}/>
                 <div id="wall" style={{background: this.state.property}}>
                     <Controls download={this.state.imageUrl}/>
                     <Note/>
                     <Clock />
-                    <Weather city="Ghaziabad"/>
+                    <Weather city={this.state.weatherLocation}/>
                     {/* <Quote/> */}
                     <Social/>
                 </div>

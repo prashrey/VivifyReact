@@ -7,20 +7,23 @@ class Weather extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            wApi: []
+            wApi: "",
+            wPlace:""
         };
-
+    }
+    componentWillReceiveProps(){
         let strRes = this;
-        let loc = this.props.city;
-        fetch("http://api.openweathermap.org/data/2.5/weather?q=" + loc + "&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657")
+        this.setState({wPlace: this.props.city});
+        fetch("http://api.openweathermap.org/data/2.5/weather?q=" + this.state.wPlace + "&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657")
             .then( (response) => {
                 return response.json();
             })
             .then( (resp) => {
             if(resp.cod == "404"){
-                document.getElementById('weatherContainer').innerText = "No such city bro..";;
+                document.getElementById('weatherBox').style.border = "1px solid red";
             }
             else{
+                document.getElementById('weatherBox').style.border = "1px solid #ccc";                
                 strRes.setState({wApi: resp});
                 //console.log(strRes.state.wApi);
             }
@@ -29,9 +32,27 @@ class Weather extends React.Component {
                 document.getElementById('weatherContainer').innerHTML = "<div class='noInternetWeather'><p>Couldn't get weather details, Sorry mate!</p></div>";
             })
     }
-    componentWillMount(){
+    // componentWillMount(){
         
-    }
+    //     let strRes = this;
+    //     this.setState({wPlace: this.props.city});
+    //     fetch("http://api.openweathermap.org/data/2.5/weather?q=" + this.state.wPlace + "&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657")
+    //         .then( (response) => {
+    //             return response.json();
+    //         })
+    //         .then( (resp) => {
+    //         if(resp.cod == "404"){
+    //             document.getElementById('weatherContainer').innerText = "No such city bro..";;
+    //         }
+    //         else{
+    //             strRes.setState({wApi: resp});
+    //             //console.log(strRes.state.wApi);
+    //         }
+    //         })
+    //         .catch( () =>{
+    //             document.getElementById('weatherContainer').innerHTML = "<div class='noInternetWeather'><p>Couldn't get weather details, Sorry mate!</p></div>";
+    //         })
+    // }
     render(){
         if(this.state.wApi.name !== undefined)
         {
