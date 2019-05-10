@@ -17,8 +17,7 @@ class Card extends React.Component{
         }
         return(
             <div className="cardParent">
-                <div className="card0" style={{background: url}}>
-                </div>
+                <img className="card0" src={url.substring(4,url.length-1)} />
                 <div className="cardBody">
                     <div className="title0"><a href={this.props.ary.url}>{head}</a></div>                
                     <div className="desc">{description}</div>
